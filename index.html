@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌙 Libro Wicca - Grimorio Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+</head>
+<body>
+
+<header>
+    <h1>🌙 Libro Wicca</h1>
+    <p>Tu grimorio digital personal</p>
+    <button id="btnModoOscuro" style="position: absolute; top: 20px; right: 20px; background: #4a3480; padding: 8px 15px;">🌓 Modo Claro</button>
+</header>
+
+<nav aria-label="Menú principal">
+    <button data-seccion="inicio">🏠 Inicio</button>
+    <button data-seccion="hechizos">📜 Hechizos</button>
+    <button data-seccion="rituales">🔮 Rituales</button>
+    <button data-seccion="festividades">📅 Festividades</button>
+    <button data-seccion="cristales">💎 Cristales</button>
+    <button data-seccion="hierbas">🌿 Hierbas</button>
+    <button data-seccion="colores">🎨 Colores</button>
+    <button data-seccion="tarot">🃏 Tarot</button>
+    <button data-seccion="sueños">💭 Sueños</button>
+    <button data-seccion="calendario">🗓️ Calendario</button>
+    <button data-seccion="notas">📝 Grimorio</button>
+</nav>
+
+<main>
+    <!-- INICIO -->
+    <section id="inicio" class="pagina">
+        <div class="tarjeta"><h2>🌙 Fase Lunar</h2><p id="faseLuna">Calculando...</p></div>
+        <div class="tarjeta"><h2>⏰ Hora Actual</h2><p id="reloj">00:00:00</p></div>
+        <div class="tarjeta"><h2>🌟 Frase del Día</h2><p id="frase"></p><button id="btnNuevaFrase">Nueva frase</button></div>
+        <div class="tarjeta"><h2>🎲 Hechizo Aleatorio</h2><button id="btnHechizoAleatorio">Mostrar Hechizo</button><p id="hechizoRandom"></p></div>
+        <div class="tarjeta"><h2>🃏 Carta del Día (Tarot)</h2><button id="btnCartaDia">Tirar carta</button><p id="cartaDia"></p></div>
+        <div class="tarjeta"><h2>🌙 Consejo Lunar</h2><p id="consejoLunar">Conecta con la energía de la luna...</p></div>
+        <div class="tarjeta"><h2>📅 Festividad Wicca Actual</h2><p id="sabbatActual">Consultando calendario...</p></div>
+        <div class="tarjeta"><h2>🕯️ Ritual del Día</h2><p id="ritualDelDia">Selecciona un ritual</p><button id="btnRitualLunaNueva">Ritual Luna Nueva</button><button id="btnRitualAmor">Ritual de Amor</button></div>
+        <div class="tarjeta"><h2>⭐ Día Mágico</h2><p id="diaMagico">Consultando...</p></div>
+    </section>
+
+    <!-- HECHIZOS -->
+    <section id="hechizos" class="pagina oculto"><h2>📜 Hechizos</h2><input type="text" id="busquedaHechizos" placeholder="Buscar hechizo..."><div id="listaHechizos"></div></section>
+    <section id="rituales" class="pagina oculto"><h2>🔮 Rituales</h2><input type="text" id="busquedaRituales" placeholder="Buscar ritual..."><div id="listaRituales"></div></section>
+    <section id="festividades" class="pagina oculto"><h2>📅 Los 8 Sabbats Wicca</h2><div id="listaSabbats"></div></section>
+    <section id="cristales" class="pagina oculto"><h2>💎 Cristales</h2><input type="text" id="busquedaCristales" placeholder="Buscar cristal..."><div id="listaCristales"></div></section>
+    <section id="hierbas" class="pagina oculto"><h2>🌿 Hierbas</h2><input type="text" id="busquedaHierbas" placeholder="Buscar hierba..."><div id="listaHierbas"></div></section>
+    <section id="colores" class="pagina oculto"><h2>🎨 Colores Mágicos</h2><div id="listaColores"></div></section>
+    <section id="tarot" class="pagina oculto"><h2>🃏 Tarot</h2><div class="tarjeta"><button id="btnTarotUnica">✨ Tirar una carta ✨</button><p id="resultadoTarot"></p></div><div class="tarjeta"><button id="btnTarotTres">🔮 Tirar 3 cartas 🔮</button><div id="resultadoTarotTres"></div></div></section>
+    <section id="sueños" class="pagina oculto"><h2>💭 Diario de Sueños</h2><input type="date" id="fechaSueno"><textarea id="textoSueno" placeholder="Describe tu sueño..."></textarea><button id="btnGuardarSueno">💾 Guardar Sueño</button><button id="btnVerSuenos">📖 Ver mis sueños</button><div id="listaSuenos"></div></section>
+    <section id="calendario" class="pagina oculto"><h2>🗓️ Calendario Mágico</h2><div class="tarjeta"><p id="fechaActual"></p></div><div class="tarjeta"><h3>🌙 Fases Lunares</h3><ul><li>🌑 Luna Nueva - Nuevos comienzos</li><li>🌓 Cuarto Creciente - Crecimiento</li><li>🌕 Luna Llena - Poder máximo</li><li>🌗 Cuarto Menguante - Liberación</li></ul></div><div class="tarjeta"><h3>📅 Días Mágicos</h3><ul id="diasMagicosLista"></ul></div><div class="tarjeta"><h3>🔮 Próximas Lunas</h3><button id="btnProximasLunas">Calcular</button><p id="proximasLunas"></p></div><div class="tarjeta"><h3>⭐ Tu Luna Natal</h3><input type="date" id="fechaNacimiento"><button id="btnLunaNatal">Calcular</button><p id="resultadoLunaNatal"></p></div></section>
+    <section id="notas" class="pagina oculto"><h2>📝 Grimorio</h2><textarea id="nota" placeholder="Tus notas mágicas..."></textarea><br><button id="btnGuardarNota">💾 Guardar</button><button id="btnDescargarNota">📄 Descargar</button><button id="btnExportarTodo">💿 Exportar Todo</button><button id="btnImportarTodo">📂 Importar</button><input type="file" id="archivoImportar" style="display:none" accept=".json"><p id="mensaje"></p></section>
+</main>
+<footer><p>🌙 Libro Wicca Digital</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
